@@ -45,9 +45,9 @@ Inputs and Outputs:
 |:----------|:---------------|
 | number | The number of units to add to the date |
 | units  | The units to add (allowed values are years, months and days) |
-| date   | The date to add the units to. If this is blank, the current date will be chosen |
+| date   | The date to add the units to (must be in the format YYYY-MM-DD). If this is blank, the current date will be chosen |
 
 ## Ouputs
 | Output   | Description    |
 |:----------|:---------------|
-| result    | The new date |
+| result    | The new date (will be in the format YYYY-MM-DD) |
