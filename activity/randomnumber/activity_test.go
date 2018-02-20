@@ -48,9 +48,6 @@ func TestEval(t *testing.T) {
 	act := NewActivity(getActivityMetadata())
 	tc := test.NewTestActivityContext(getActivityMetadata())
 
-	fmt.Printf(act.Metadata().ID)
-	fmt.Printf(tc.TaskName())
-
 	//setup attrs
 	tc.SetInput("min", 0)
 	tc.SetInput("max", 10)

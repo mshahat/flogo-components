@@ -1,12 +1,12 @@
-package randomstring
+package addtodate
 
 import (
-	"fmt"
 	"io/ioutil"
 	"testing"
 
 	"github.com/TIBCOSoftware/flogo-contrib/action/flow/test"
 	"github.com/TIBCOSoftware/flogo-lib/core/activity"
+	"github.com/stretchr/testify/assert"
 )
 
 var activityMetadata *activity.Metadata
@@ -49,10 +49,12 @@ func TestEval(t *testing.T) {
 	tc := test.NewTestActivityContext(getActivityMetadata())
 
 	//setup attrs
-	tc.SetInput("length", 10)
+	tc.SetInput("number", 2)
+	tc.SetInput("units", "months")
+	tc.SetInput("date", "2018-02-17")
 	act.Eval(tc)
 
 	//check result attr
 	result := tc.GetOutput("result")
-	fmt.Printf("Created a random string [%s]", result)
+	assert.Equal(t, result, "2018-04-17")
 }
